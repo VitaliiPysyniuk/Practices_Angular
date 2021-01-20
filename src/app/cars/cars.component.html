@@ -1,0 +1,12 @@
+<div [className]="'flexWrapper'">
+  <h2>Cars</h2>
+  <p *ngFor="let car of cars">
+    <app-car [car]="car"></app-car>
+  </p>
+  <hr/>
+  <hr/>
+  <h2>Owners</h2>
+  <p *ngFor="let car of cars">
+    <app-owner [owner]="car.owner"></app-owner>
+  </p>
+</div>

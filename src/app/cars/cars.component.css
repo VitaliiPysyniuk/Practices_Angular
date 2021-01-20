@@ -1,0 +1,13 @@
+.flexWrapper {
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #032541;
+  padding: 3px;
+}
+
+.flexWrapper h2 {
+  text-align: center;
+}
