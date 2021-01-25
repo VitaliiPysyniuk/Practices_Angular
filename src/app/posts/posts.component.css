@@ -1,0 +1,8 @@
+.center {
+  text-align: center;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: column;
+}

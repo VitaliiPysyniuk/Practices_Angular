@@ -1,0 +1,16 @@
+.border {
+  border: 2px solid navy;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: row;
+}

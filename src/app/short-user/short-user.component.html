@@ -1,0 +1,12 @@
+<div [className]="['border flexWrapper']">
+  <div [className]="'info'">
+    <h4>User #{{user.id}}</h4>
+    <p><b>Name:</b> {{user.name}}</p>
+    <p><b>Username:</b> {{user.username}}</p>
+    <p><b>E-mail:</b> {{user.email}}</p>
+  </div>
+  <div [className]="'column'">
+    <a [routerLink]="[user.id, 'posts']"><button>Posts</button></a>
+    <a [routerLink]="[user.id]"><button>More info</button></a>
+  </div>
+</div>

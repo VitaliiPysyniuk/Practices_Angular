@@ -1,0 +1,14 @@
+<h2 [className]="['center']">All Users</h2>
+<div [className]="['flexWrapper']">
+  <div [className]="['border']">
+    <h3 [className]="['center']">Short users info</h3>
+    <div *ngFor="let user of users">
+      <app-short-user [user]="user"></app-short-user>
+    </div>
+  </div>
+  <div [className]="['border']">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
