@@ -1,0 +1,14 @@
+header {
+  height: 80px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main {
+  border: 2px solid navy;
+  padding: 10px;
+}
+

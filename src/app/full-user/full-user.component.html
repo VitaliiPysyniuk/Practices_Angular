@@ -1,0 +1,10 @@
+<div [class]="['border']">
+  <p><b>Id: </b>{{user.id}}</p>
+  <p><b>Name: </b>{{user.name}}</p>
+  <p><b>Username: </b>{{user.username}}</p>
+  <p><b>E-mail: </b>{{user.email}}</p>
+  <button (click)="goToUserPosts()">Posts</button>
+  <button>Comments</button>
+</div>
+
+<router-outlet></router-outlet>

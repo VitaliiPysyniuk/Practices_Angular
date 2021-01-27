@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.width50 {
+  width: 48%;
+  border: 1px solid navy;
+  padding: 5px;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
