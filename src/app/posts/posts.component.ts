@@ -9,7 +9,6 @@ import {IPost} from "../../models";
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  userId: number;
   info: string = 'posts';
   posts: IPost[];
 
@@ -17,11 +16,11 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if ( this.activatedRouter.params._value.id) {
+    console.log(this.activatedRouter.params._value);
+    if (this.activatedRouter.params._value.id) {
       this.activatedRouter.params.subscribe(value => {
-        this.postsService.getUserPosts(value.id).subscribe(value1 => this.posts = value1);
+        this.postsService.getUserPosts(value.id).subscribe(posts => this.posts = posts);
         this.info = `user #${value.id} posts`;
-        this.postsService.getUserPosts(this.userId).subscribe(response => this.posts = response);
       });
     }
   }
