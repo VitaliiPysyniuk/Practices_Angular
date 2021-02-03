@@ -1,0 +1,12 @@
+<form [formGroup]="myForm">
+  <div>
+    Brand: <input formControlName="brand">
+  </div>
+  <div>
+    Model: <input formControlName="model">
+  </div>
+  <div>
+    Year: <input formControlName="year">
+  </div>
+  <button (click)="add(myForm)">Add</button>
+</form>
