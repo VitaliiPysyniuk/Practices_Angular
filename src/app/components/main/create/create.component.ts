@@ -18,6 +18,6 @@ export class CreateComponent{
     year: new FormControl()
   });
   add(form: FormGroup): void {
-    this.carsService.addNewCar(form.getRawValue()).subscribe();
+    this.carsService.addNewCar(form.getRawValue()).subscribe(value => console.log(value));
   }
 }
