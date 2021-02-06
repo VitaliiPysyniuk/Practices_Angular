@@ -1,0 +1,17 @@
+<h3>Register component</h3>
+<div>
+  <form [formGroup]="form" (ngSubmit)="userRegistration(form)">
+    <p>Name: <input [formControl]="name"></p>
+    <h5 *ngIf="form.controls.name.errors?.maxlength">You exceeded max login length</h5>
+    <p>Surname: <input [formControl]="surname"></p>
+    <h5 *ngIf="form.controls.surname.errors?.maxlength">You exceeded max login length</h5>
+    <p>Login: <input [formControl]="login"></p>
+    <h5 *ngIf="form.controls.login.errors?.maxlength">You exceeded max login length</h5>
+    <p>Password: <input [formControl]="password"></p>
+    <h5 *ngIf="form.controls.password.errors?.maxlength">You exceeded max login length</h5>
+    <button [disabled]="form.invalid">Register</button>
+  </form>
+  <a>
+    <button (click)="navigateToRegister()">Sign in</button>
+  </a>
+</div>

@@ -1,0 +1,50 @@
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UsersService} from "../../sevices";
+import {IUser} from "../../../models";
+import {DataService} from "../../../services/data.service";
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  users: IUser[] = null;
+  user: IUser = null;
+  notFound = false;
+
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private usersService: UsersService,
+              private dataService: DataService) { }
+  login = new FormControl(null, [Validators.required, Validators.maxLength(15)]);
+  password = new FormControl(null, [Validators.required, Validators.maxLength(15)]);
+
+  form = new FormGroup({
+    login: this.login,
+    password: this.password
+  });
+
+  ngOnInit(): void {
+  }
+
+  navigateToRegister(): void {
+    this.router.navigate(['register'], {relativeTo: this.activatedRoute.parent});
+  }
+
+  async userLogination(form: FormGroup): Promise<void>{
+    await this.usersService.getUsers().toPromise().then(value => this.users = value);
+    this.user = this.users.find(value => {
+      return (value.password === form.getRawValue().password && value.login === form.getRawValue().login);
+    });
+    if (!!this.user) {
+      this.dataService.setAuthUser(this.user);
+      this.router.navigate(['users']);
+    } else {
+      this.notFound = true;
+    }
+  }
+}
