@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  border: 1px solid navy;
+  background-color: lightgray;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 95%;
+}

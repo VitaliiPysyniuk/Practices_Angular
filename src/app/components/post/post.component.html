@@ -1,0 +1,5 @@
+<div>
+  <p><b>Id: </b>{{post.id}} <b>UserId: </b>{{post.userId}} <b>Title: </b>{{post.title}}<br><b>Body: </b>{{post.body}}</p>
+  <button *ngIf="selectedFlag" (click)="onPostSelect()">Details</button>
+</div>
+<hr>
