@@ -16,10 +16,9 @@ export class LoginComponent implements OnInit {
   user: IUser = null;
   notFound = false;
 
-  constructor(private router: Router,
-              private activatedRoute: ActivatedRoute,
-              private usersService: UsersService,
-              private dataService: DataService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private usersService: UsersService, private dataService: DataService) {
+  }
+
   login = new FormControl(null, [Validators.required, Validators.maxLength(15)]);
   password = new FormControl(null, [Validators.required, Validators.maxLength(15)]);
 
@@ -29,20 +28,36 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.usersService.getUsers().toPromise().then(value => this.users = value);
   }
 
   navigateToRegister(): void {
     this.router.navigate(['register'], {relativeTo: this.activatedRoute.parent});
   }
+  navigateToUsers(): void {
+    this.router.navigate(['users']);
+  }
 
-  async userLogination(form: FormGroup): Promise<void>{
-    await this.usersService.getUsers().toPromise().then(value => this.users = value);
+  // async userLogination(form: FormGroup): Promise<void>{
+  //   await this.usersService.getUsers().toPromise().then(value => this.users = value);
+  //   this.user = this.users.find(value => {
+  //     return (value.password === form.getRawValue().password && value.login === form.getRawValue().login);
+  //   });
+  //   if (!!this.user) {
+  //     this.dataService.setAuthUser(this.user);
+  //     this.router.navigate(['users']);
+  //   } else {
+  //     this.notFound = true;
+  //   }
+  // }
+
+  userLogination(form: FormGroup): void {
     this.user = this.users.find(value => {
       return (value.password === form.getRawValue().password && value.login === form.getRawValue().login);
     });
     if (!!this.user) {
       this.dataService.setAuthUser(this.user);
-      this.router.navigate(['users']);
+      this.navigateToUsers();
     } else {
       this.notFound = true;
     }

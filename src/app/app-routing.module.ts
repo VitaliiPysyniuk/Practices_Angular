@@ -6,7 +6,7 @@ import {RouterModule, Routes} from "@angular/router";
 const childrenRoutes: Routes = [
   {path: 'auth', loadChildren: () => import('./authorization/authorization.module').then(module => module.AuthorizationModule)},
   {path: 'users', loadChildren: () => import('./users/users.module').then(module => module.UsersModule)},
-  {path: 'bankServices', loadChildren: () => import('./bank-services/bank-services.module').then(module => module.BankServicesModule)},
+  {path: 'services', loadChildren: () => import('./bank-services/bank-services.module').then(module => module.BankServicesModule)},
   {path: '', redirectTo: 'auth', pathMatch: 'full'}
 ];
 

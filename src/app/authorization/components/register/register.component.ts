@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UsersService} from "../../sevices";
+import {DataService} from "../../../services/data.service";
+import {IUser} from "../../../models";
 
 @Component({
   selector: 'app-register',
@@ -9,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private usersService: UsersService, private dataService: DataService) {}
 
   name = new FormControl(null, [Validators.required, Validators.maxLength(20)]);
   surname = new FormControl(null, [Validators.required, Validators.maxLength(20)]);
@@ -31,12 +34,14 @@ export class RegisterComponent implements OnInit {
   }
 
   userRegistration(form: FormGroup): void {
-    console.log(form);
-    console.log(form.getRawValue());
-  }
-
-  showForm(form: FormGroup): void {
-    console.log(form);
+    // todo перевірка чи такий юзер вже зараєстрований. Це робити на стороні апішки?
+    this.usersService.addUser(form.getRawValue()).subscribe(value => {
+      if (value) {
+        window.alert(`Added new user with:\nName: ${value.name} \nSurname: ${value.surname}`);
+        form.reset();
+      }
+    });
+    this.navigateToRegister();
   }
 
 }

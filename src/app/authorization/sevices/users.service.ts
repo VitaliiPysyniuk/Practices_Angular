@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {IUser} from "../../models";
-import {Observable} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {IUser} from '../../models';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+
+  newUser: IUser;
 
   constructor(private httpClient: HttpClient) { }
 

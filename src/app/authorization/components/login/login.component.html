@@ -6,7 +6,7 @@
     <p>Password: <input [formControl]="password"></p>
     <h5 *ngIf="form.controls.password.errors?.maxlength">You exceeded max login length</h5>
     <button [disabled]="form.invalid">Login</button>
-    <h5 *ngIf="notFound">User with this password and login got found</h5>
+    <h5 *ngIf="notFound">User with this password and<br> login not found</h5>
   </form>
   <a>
     <button (click)="navigateToRegister()">Sign up</button>
