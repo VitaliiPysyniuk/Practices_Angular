@@ -1,1 +1,8 @@
-<p>user works!</p>
+<div class="single-user">
+  <div><b>Id: </b>{{user.id}} <b>Name: </b>{{user.name}} <b>Surname: </b>{{user.surname}}</div>
+  <div>
+    <button [disabled]="accessFlag">Edit</button>
+    <button [disabled]="accessFlag">Details</button>
+  </div>
+</div>
+

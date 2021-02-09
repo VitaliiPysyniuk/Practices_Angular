@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {IUser} from "../../../models";
+import {DataService} from "../../../services";
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  @Input() user: IUser;
+  accessFlag = true;
+  authUser: IUser;
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getAuthUser().subscribe(value => this.authUser = value);
+    if (this.authUser.id === this.user.id || this.authUser.status === 'admin') {
+      this.accessFlag = false;
+    }
+  }
+
+  saveChanges(): void {
+    window.history.back();
   }
 
 }

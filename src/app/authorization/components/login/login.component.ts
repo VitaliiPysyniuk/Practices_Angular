@@ -4,6 +4,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UsersService} from "../../sevices";
 import {IUser} from "../../../models";
 import {DataService} from "../../../services/data.service";
+import {browser} from "protractor";
 
 @Component({
   selector: 'app-login',
@@ -37,19 +38,6 @@ export class LoginComponent implements OnInit {
   navigateToUsers(): void {
     this.router.navigate(['users']);
   }
-
-  // async userLogination(form: FormGroup): Promise<void>{
-  //   await this.usersService.getUsers().toPromise().then(value => this.users = value);
-  //   this.user = this.users.find(value => {
-  //     return (value.password === form.getRawValue().password && value.login === form.getRawValue().login);
-  //   });
-  //   if (!!this.user) {
-  //     this.dataService.setAuthUser(this.user);
-  //     this.router.navigate(['users']);
-  //   } else {
-  //     this.notFound = true;
-  //   }
-  // }
 
   userLogination(form: FormGroup): void {
     this.user = this.users.find(value => {

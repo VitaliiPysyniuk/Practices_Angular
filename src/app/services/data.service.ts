@@ -12,8 +12,8 @@ export class DataService {
 
   constructor() { }
 
-  getAuthUser(): IUser {
-    return this.authorizedUser.getValue();
+  getAuthUser(): BehaviorSubject<IUser> {
+    return this.authorizedUser;
   }
   setAuthUser(newUser: IUser): void {
     this.authorizedUser.next(newUser);

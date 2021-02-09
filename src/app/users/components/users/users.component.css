@@ -5,11 +5,93 @@
 
 header {
   width: 100%;
-  height: 80px;
-  padding-left: 100px;
-  padding-right: 50px;
+  /*height: 80px;*/
+  height: 10vh;
+  margin-bottom: 3vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: white;
+  background-color: navy;
 }
+
+h3, h2 {
+  margin: 0;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0;
+  border: none;
+  background-color: navy;
+  outline:none;
+  border-radius: 3px;
+}
+
+mat-icon {
+  color: white;
+}
+
+button span {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+button:active {
+  background-color: white;
+}
+
+button:active span {
+  color: navy;
+}
+
+button:active mat-icon {
+  color: navy;
+}
+
+main {
+  border: 3px solid navy;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 74vh;
+  margin: 1vh;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-users {
+  width: 100%;
+  border: 1px solid darkgray;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0;
+  padding: 5px;
+}
+
+.all-users h2 {
+  text-align: center;
+  font-family: "Arial Black";
+  margin: 0 0 5px 0;
+}
+
+.wid74 {
+  width: 74%;
+}
+
+.wid24 {
+  width: 24%;
+}
+
+footer {
+  width: 100%;
+  /*height: 80px;*/
+  height: 8vh;
+  background-color: navy;
+  margin-top: 3vh;
+}
+
+
