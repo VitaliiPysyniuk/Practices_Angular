@@ -1,13 +1,10 @@
-import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
-import {IUser} from "../../models";
-import {HttpClient} from "@angular/common/http";
-import {URL} from "../../config";
+import {Injectable} from '@angular/core';
+import {Resolve} from '@angular/router';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+
+import {IUser} from '../../models';
+import {URL} from '../../config';
 
 @Injectable({
   providedIn: 'root'

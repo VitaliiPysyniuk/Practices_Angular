@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
-import {UsersService} from "../../sevices";
-import {DataService} from "../../../services/data.service";
-import {IUser} from "../../../models";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+
+import {UsersService} from '../../sevices';
+import {DataService} from '../../../services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit {
   }
 
   userRegistration(form: FormGroup): void {
-    // todo перевірка чи такий юзер вже зараєстрований. Це робити на стороні апішки?
     this.usersService.addUser(form.getRawValue()).subscribe(value => {
       if (value) {
         window.alert(`Added new user with:\nName: ${value.name} \nSurname: ${value.surname}`);

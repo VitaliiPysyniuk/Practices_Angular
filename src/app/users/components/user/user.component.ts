@@ -1,8 +1,9 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 import {IUser} from '../../../models';
 import {DataService} from '../../../services';
-import {UsersService} from "../../services";
+import {UsersService} from '../../services';
 
 @Component({
   selector: 'app-user',
@@ -32,11 +33,10 @@ export class UserComponent implements OnInit {
 
   editUser(): void {
     this.router.navigate([this.user.id], {relativeTo: this.activatedRoute, state: this.user})
-      .then(value => this.upEdit.emit(true));
+      .then(() => this.upEdit.emit(true));
   }
 
-  // todo це норм так робити???
   deleteUser(): void {
-    this.usersService.deleteUser(this.user.id).subscribe(value => this.upDeleted.emit());
+    this.usersService.deleteUser(this.user.id).subscribe(() => this.upDeleted.emit());
   }
 }

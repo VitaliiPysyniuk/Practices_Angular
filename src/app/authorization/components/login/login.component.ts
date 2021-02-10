@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UsersService} from "../../sevices";
-import {IUser} from "../../../models";
-import {DataService} from "../../../services/data.service";
-import {browser} from "protractor";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+
+import {UsersService} from '../../sevices';
+import {IUser} from '../../../models';
+import {DataService} from '../../../services/data.service';
 
 @Component({
   selector: 'app-login',

@@ -1,8 +1,9 @@
-import {AfterContentChecked, AfterViewInit, Component, DoCheck, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 import {DataService} from '../../../services';
 import {IUser} from '../../../models';
-import {UsersService} from "../../services";
+import {UsersService} from '../../services';
 
 @Component({
   selector: 'app-users',
@@ -22,7 +23,7 @@ export class UsersComponent implements OnInit{
 
   ngOnInit(): void {
     this.dataService.getAuthUser().subscribe(authUser => this.authUser = authUser);
-    this.dataService.getUpdatedUser().subscribe(updatedUser => {
+    this.dataService.getUpdatedUser().subscribe(() => {
       this.editing = false;
       this.usersService.getUsers().subscribe(users => this.users = users);
     });
@@ -39,7 +40,4 @@ export class UsersComponent implements OnInit{
   userDeleted(): void {
     this.usersService.getUsers().subscribe(users => this.users = users);
   }
-
-
-
 }
