@@ -7,6 +7,7 @@ import {
 import { Observable, of } from 'rxjs';
 import {IUser} from "../../models";
 import {HttpClient} from "@angular/common/http";
+import {URL} from "../../config";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,6 @@ export class UsersResolver implements Resolve<IUser[]> {
   }
 
   resolve(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>('https://localhost:44373/users');
+    return this.httpClient.get<IUser[]>(URL.users);
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IUser} from '../../models';
 import {Observable} from 'rxjs';
+import {URL} from "../../config";
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,9 @@ export class UsersService {
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>('https://localhost:44373/users');
+    return this.httpClient.get<IUser[]>(URL.users);
   }
   addUser(user: IUser): Observable<IUser> {
-    return this.httpClient.post<IUser>('https://localhost:44373/users', user);
+    return this.httpClient.post<IUser>(URL.users, user);
   }
 }

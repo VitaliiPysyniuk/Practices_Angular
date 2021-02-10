@@ -14,7 +14,8 @@
 .register-main button {
   width: 100%;
   margin: 5px auto;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bold;
   padding: 1px 2px;
   display: flex;
   flex-direction: column;
@@ -70,10 +71,4 @@ form {
   width: 200px;
 }
 
-.save-button {
-  width: 150px;
-  margin: 5px auto;
-  font-size: 16px;
-  padding: 1px 2px;
-}
 

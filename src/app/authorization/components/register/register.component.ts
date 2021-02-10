@@ -39,9 +39,8 @@ export class RegisterComponent implements OnInit {
       if (value) {
         window.alert(`Added new user with:\nName: ${value.name} \nSurname: ${value.surname}`);
         form.reset();
+        this.navigateToLogin();
       }
     });
-    this.navigateToLogin();
   }
-
 }

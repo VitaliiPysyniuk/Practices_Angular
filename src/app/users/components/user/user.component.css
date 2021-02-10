@@ -5,6 +5,7 @@
 
 .single-user {
   padding: 5px;
+  min-height: 24.67px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
