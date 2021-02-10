@@ -4,17 +4,18 @@
     <div class="field-div">
       <div class="flexWrapper">
         <div>Login:</div>
-        <input [formControl]="login">
+        <input [formControl]="login" (input)="onInput()">
       </div>
       <h4 *ngIf="form.controls.login.errors?.maxlength">You exceeded max login length (15)</h4>
     </div>
     <div class="field-div">
       <div class="flexWrapper">
         <div>Password:</div>
-        <input [formControl]="password">
+        <input [formControl]="password" (input)="onInput()">
       </div>
       <h4 *ngIf="form.controls.password.errors?.maxlength">You exceeded max password length (15)</h4>
     </div>
+    <h4 *ngIf="notFound">No such user with this login and password</h4>
     <button [disabled]="form.invalid">Login</button>
   </form>
   <a>

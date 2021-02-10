@@ -41,6 +41,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['users']);
   }
 
+  onInput(): void {
+    this.notFound = false;
+  }
+
   userLogination(form: FormGroup): void {
     this.user = this.users.find(value => {
       return (value.password === form.getRawValue().password && value.login === form.getRawValue().login);
