@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+}
+
+.styling {
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info {
+  min-width: 250px;
+}

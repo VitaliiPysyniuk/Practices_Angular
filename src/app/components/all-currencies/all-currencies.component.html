@@ -1,0 +1,4 @@
+<h3>Current date {{dateFormatter(currentDate, 2)}}</h3>
+<button (click)="changeDate()">Change date</button>
+<hr>
+<app-single-currency *ngFor="let currency of allCurrencies" [currency]="currency"></app-single-currency>

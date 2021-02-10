@@ -1,0 +1,1 @@
+export {ICurrency} from './ICurrency';
