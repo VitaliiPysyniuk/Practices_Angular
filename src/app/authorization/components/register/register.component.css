@@ -1,34 +1,79 @@
 * {
   margin: 0;
-  padding: 0;
 }
 
-h3 {
+.register-main {
+  width: 350px;
+  margin: 200px auto;
+  border: 3px solid navy;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.register-main button {
+  width: 100%;
+  margin: 5px auto;
+  font-size: 16px;
+  padding: 1px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#signInButton {
+  width: calc(100% - 12px);
+}
+
+h2 {
   text-align: center;
+  font-family: "Arial Black";
+  margin: 0 0 5px 0;
 }
 
 form {
-  padding: 3px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
-button {
-  width: 80px;
-}
-
-div {
-  padding: 3px;
-  border: 2px solid navy;
-  width: 170px;
-  margin: 0 auto;
+.field-div {
+  padding: 5px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 }
 
-h5 {
+.field-div h4 {
+  margin: 0;
+  text-align: center;
   color: red;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.flexWrapper input {
+  font-size: 16px;
+  width: 200px;
+}
+
+.save-button {
+  width: 150px;
+  margin: 5px auto;
+  font-size: 16px;
+  padding: 1px 2px;
 }
 

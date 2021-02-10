@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.usersService.getUsers().toPromise().then(value => this.users = value);
+    this.usersService.getUsers().subscribe(value => {
+      this.users = value;
+    });
   }
 
   navigateToRegister(): void {

@@ -1,5 +1,6 @@
-<div class="register-main">
-  <form [formGroup]="form" (ngSubmit)="userRegistration(form)">
+<h2>Edit user</h2>
+<div>
+  <form [formGroup]="form" (ngSubmit)="saveChanges(form)">
     <div class="field-div">
       <div class="flexWrapper">
         <div>Name:</div> <input [formControl]="name">
@@ -24,9 +25,6 @@
       </div>
       <h4 *ngIf="form.controls.password.errors?.maxlength">You exceeded max password length (15)</h4>
     </div>
-    <button [disabled]="form.invalid">Register</button>
+    <button class="save-button">Save changes</button>
   </form>
-  <a>
-    <button id="signInButton" (click)="navigateToLogin()">Sign in</button>
-  </a>
 </div>

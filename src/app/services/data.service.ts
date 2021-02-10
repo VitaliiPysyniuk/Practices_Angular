@@ -7,8 +7,8 @@ import {IUser} from "../models";
 })
 export class DataService {
 
-  user: IUser = null;
-  private authorizedUser = new BehaviorSubject<IUser>(this.user);
+  private authorizedUser = new BehaviorSubject<IUser>(null);
+  private updatedUser = new BehaviorSubject<IUser>(null);
 
   constructor() { }
 
@@ -17,5 +17,13 @@ export class DataService {
   }
   setAuthUser(newUser: IUser): void {
     this.authorizedUser.next(newUser);
+  }
+
+  getUpdatedUser(): BehaviorSubject<IUser> {
+    return this.updatedUser;
+  }
+
+  setUpdatedUser(updatedUser: IUser): void {
+    this.updatedUser.next(updatedUser);
   }
 }

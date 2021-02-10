@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToRegister(): void {
+  navigateToLogin(): void {
     this.router.navigate(['login'], {relativeTo: this.activatedRoute.parent});
   }
 
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         form.reset();
       }
     });
-    this.navigateToRegister();
+    this.navigateToLogin();
   }
 
 }

@@ -1,8 +1,9 @@
 <div class="single-user">
   <div><b>Id: </b>{{user.id}} <b>Name: </b>{{user.name}} <b>Surname: </b>{{user.surname}}</div>
   <div>
-    <button [disabled]="accessFlag">Edit</button>
-    <button [disabled]="accessFlag">Details</button>
+    <button [class.display]="accessFlag" (click)="editUser()">Edit</button>
+    <button [class.display]="admin" (click)="deleteUser()">Delete</button>
+<!--    <button [class.display]="accessFlag">Details</button>-->
   </div>
 </div>
 

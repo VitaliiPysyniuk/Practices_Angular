@@ -1,15 +1,22 @@
-<h3>Login component</h3>
-<div>
+<div class="login-main">
   <form [formGroup]="form" (ngSubmit)="userLogination(form)">
-    <p>Login: <input [formControl]="login"></p>
-    <h5 *ngIf="form.controls.login.errors?.maxlength">You exceeded max login length</h5>
-    <p>Password: <input [formControl]="password"></p>
-    <h5 *ngIf="form.controls.password.errors?.maxlength">You exceeded max login length</h5>
+    <div class="field-div">
+      <div class="flexWrapper">
+        <div>Login:</div>
+        <input [formControl]="login">
+      </div>
+      <h4 *ngIf="form.controls.login.errors?.maxlength">You exceeded max login length (15)</h4>
+    </div>
+    <div class="field-div">
+      <div class="flexWrapper">
+        <div>Password:</div>
+        <input [formControl]="password">
+      </div>
+      <h4 *ngIf="form.controls.password.errors?.maxlength">You exceeded max password length (15)</h4>
+    </div>
     <button [disabled]="form.invalid">Login</button>
-    <h5 *ngIf="notFound">User with this password and<br> login not found</h5>
   </form>
   <a>
-    <button (click)="navigateToRegister()">Sign up</button>
+    <button id="signUpButton" (click)="navigateToRegister()">Sign up</button>
   </a>
 </div>
-

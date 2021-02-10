@@ -6,17 +6,22 @@ import {UsersResolver} from './services/users.resolver';
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
 import {MatIconModule} from '@angular/material/icon';
+import {UsersService} from './services';
+import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [UserComponent, UsersComponent],
+  declarations: [UserComponent, UsersComponent, EditUserFormComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
     MatIconModule,
+    ReactiveFormsModule,
   ],
   providers: [
-    UsersResolver
+    UsersResolver,
+    UsersService
   ]
 })
 export class UsersModule { }
